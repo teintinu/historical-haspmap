@@ -2,9 +2,9 @@ import { describe, it, expect, beforeEach } from 'vitest'
 import { TimeTravelingHashmap } from './TimeTravelingHashmap';
 
 describe('initial tests', () => {
-    let tth: ReturnType<typeof TimeTravelingHashmap<string>>;
+    let tth: TimeTravelingHashmap<string>
     beforeEach(() => {
-        tth = TimeTravelingHashmap<string>();
+        tth = new TimeTravelingHashmap<string>();
         tth.put("foo", 1, "car");
         tth.put("foo", 6, "jar");
 
@@ -24,9 +24,9 @@ describe('initial tests', () => {
 })
 
 describe('big tests', () => {
-    let tth: ReturnType<typeof TimeTravelingHashmap<string>>;
+    let tth: TimeTravelingHashmap<string>
     beforeEach(() => {
-        tth = TimeTravelingHashmap<string>();
+        tth = new TimeTravelingHashmap<string>();
         for (let i = 1; i < 100000; i += 100) {
             tth.put("foo", i, "car"); // nnnnxx where xx<50
             tth.put("foo", i + 50, "jar"); // nnnnxx where xx>=50

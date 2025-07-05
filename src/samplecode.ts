@@ -1,6 +1,6 @@
 import { TimeTravelingHashmap } from "./TimeTravelingHashmap";
 
-const tth = TimeTravelingHashmap<string>();
+const tth = new TimeTravelingHashmap<string>();
 tth.put("foo", 1, "car");
 tth.put("foo", 6, "jar");
 console.log(tth.get("foo", 1));
